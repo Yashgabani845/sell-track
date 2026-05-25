@@ -29,16 +29,6 @@ const solutions = [
     demo: "https://box-cricket-demo.vercel.app"
   },
   {
-    id: "jewelry",
-    title: "Luxury Jewelry",
-    icon: Gem,
-    image: "/images/industries/jewelry.png",
-    shortDesc: "Elegant digital storefronts",
-    features: ["Visual Catalog", "Custom Orders", "Safe Checkout", "Gold Rate Sync"],
-    longDesc: "Showcase your craftsmanship with a premium digital gallery. Our jewelry solutions include high-resolution visuals and secure inquiry management.",
-    demo: "#"
-  },
-  {
     id: "clinic",
     title: "Medical Clinics",
     icon: Stethoscope,

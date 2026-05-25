@@ -1,11 +1,12 @@
 "use client";
 
+import { useState, useEffect, useRef } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import { Heart, Users, Target, Zap, ShieldCheck, Smile, Check } from "lucide-react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const values = [
   { icon: Target, title: "Mission Driven", desc: "Our goal is to bring the power of high-end tech to every local business." },
@@ -35,41 +36,145 @@ export default function AboutPage() {
                 <p className="text-lg text-gray-500 leading-relaxed mb-10 font-medium">
                   We started with a mission to bridge this gap. Today, we empower businesses from sports arenas to medical clinics with premium websites, automated booking systems, and robust inventory management.
                 </p>
-                <div className="flex items-center space-x-12">
-                  <div className="text-left">
-                    <div className="text-4xl font-bold text-gray-900 mb-1">50+</div>
-                    <div className="text-[10px] font-black text-gray-500 uppercase tracking-widest">Clients Served</div>
-                  </div>
-                  <div className="text-left">
-                    <div className="text-4xl font-bold text-gray-900 mb-1">100k+</div>
-                    <div className="text-[10px] font-black text-gray-500 uppercase tracking-widest">Bookings Handled</div>
-                  </div>
-                  <div className="text-left">
-                    <div className="text-4xl font-bold text-gray-900 mb-1">24/7</div>
-                    <div className="text-[10px] font-black text-gray-500 uppercase tracking-widest">Support</div>
-                  </div>
-                </div>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="relative"
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="relative w-full rounded-[3.5rem] bg-gradient-to-br from-white/95 via-gray-50/95 to-blue-50/80 backdrop-blur-xl border border-white/80 p-6 md:p-10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.08)] overflow-hidden flex flex-col justify-between"
               >
-                <div className="absolute inset-0 bg-blue-600/10 rounded-[3rem] rotate-3 -z-10 blur-2xl" />
-                <div className="relative aspect-square w-full rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100 bg-blue-50">
-                  <Image 
-                    src="https://images.unsplash.com/photo-1522071823991-b9671f9d7f1f?auto=format&fit=crop&q=80&w=1200" 
-                    alt="SellTrack Team" 
-                    fill
-                    priority
-                    className="object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent" />
-                  <div className="absolute bottom-10 left-10 text-white z-10">
-                    <div className="text-xs font-black uppercase tracking-[0.3em] mb-2 opacity-80">Our Team</div>
-                    <div className="text-2xl font-bold tracking-tight">The Minds Behind SellTrack</div>
-                  </div>
+                {/* Soft moving background gradients */}
+                <div className="absolute inset-0 bg-grid opacity-[0.03] pointer-events-none" />
+                <div className="absolute top-0 right-0 w-80 h-80 bg-blue-600/[0.03] rounded-full blur-[100px] pointer-events-none -translate-y-1/3 translate-x-1/3" />
+                <div className="absolute bottom-0 left-0 w-80 h-80 bg-cyan-600/[0.03] rounded-full blur-[100px] pointer-events-none translate-y-1/3 -translate-x-1/3" />
+
+                {/* Header */}
+                <div className="mb-8 px-2 text-center lg:text-left relative z-10">
+                  <span className="text-[10px] text-blue-600 uppercase font-black tracking-[0.3em] bg-blue-50/80 px-4 py-1.5 rounded-full inline-block mb-4 border border-blue-100/50 shadow-sm">
+                    DIGITAL TRANSFORMATION
+                  </span>
+                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight mb-2 leading-tight">
+                    From Traditional Operations <span className="text-gradient">To Digital Growth</span>
+                  </h3>
+                  <p className="text-gray-500 font-medium text-sm">
+                    Transforming local businesses into modern digital experiences.
+                  </p>
                 </div>
+
+                {/* Main Split Layout with Animated Center Beam */}
+                <div className="grid grid-cols-1 lg:grid-cols-11 gap-6 items-stretch relative py-4 z-10">
+                  
+                  {/* LEFT COLUMN: Before SellTrack */}
+                  <motion.div 
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    className="lg:col-span-5 bg-gray-50/50 rounded-[2.25rem] p-6 border border-gray-200/50 flex flex-col justify-between relative overflow-hidden backdrop-blur-sm group hover:border-gray-300 transition-colors duration-300"
+                  >
+                    {/* Subtle noise pattern overlay */}
+                    <div className="absolute inset-0 bg-[radial-gradient(#9ca3af_0.75px,transparent_0.75px)] [background-size:16px_16px] opacity-10 pointer-events-none" />
+
+                    <div>
+                      <div className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-6 border border-gray-200/50 bg-gray-100/30 px-3 py-1 rounded-full inline-block">
+                        BEFORE SELLTRACK
+                      </div>
+                      
+                      <div className="space-y-4">
+                        {[
+                          { emoji: "📒", title: "Manual Records", desc: "Paper tracking and spreadsheets" },
+                          { emoji: "📞", title: "Phone Bookings", desc: "Manual customer handling" },
+                          { emoji: "📦", title: "Inventory Issues", desc: "No real-time visibility" },
+                          { emoji: "🌐", title: "No Digital Presence", desc: "Limited business reach" }
+                        ].map((item, idx) => (
+                          <div 
+                            key={idx}
+                            className="flex items-start space-x-3.5 p-3 rounded-2xl bg-white/40 border border-gray-100/60 saturate-[0.15] opacity-75 select-none hover:opacity-90 hover:saturate-[0.4] transition-all duration-300"
+                          >
+                            <span className="text-xl filter grayscale opacity-60 leading-none shrink-0">{item.emoji}</span>
+                            <div>
+                              <div className="text-xs font-bold text-gray-400 mb-0.5 leading-snug">{item.title}</div>
+                              <div className="text-[10px] text-gray-400 leading-snug">{item.desc}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* CENTER COLUMN: Transformation Beam */}
+                  <div className="lg:col-span-1 flex flex-row lg:flex-col items-center justify-between lg:justify-center py-4 lg:py-0 px-2 lg:px-0 relative min-h-[60px] lg:min-h-full">
+                    {/* Flowing connector beam (Desktop only) */}
+                    <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[2px] bg-gradient-to-b from-gray-200 via-blue-500 to-gray-200 shadow-[0_0_10px_rgba(59,130,246,0.3)] hidden lg:block overflow-hidden">
+                      {/* Flowing animated light particle */}
+                      <motion.div 
+                        animate={{ y: ["-100%", "200%"] }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                        className="absolute left-0 right-0 h-16 bg-gradient-to-b from-transparent via-blue-400 to-transparent shadow-[0_0_12px_#3b82f6]"
+                      />
+                    </div>
+
+                    {/* Glowing transform steps */}
+                    <div className="flex flex-row lg:flex-col items-center justify-between lg:justify-center w-full lg:h-full gap-4 relative z-10">
+                      <span className="text-[8px] font-black text-gray-400 bg-gray-100 border border-gray-200/60 px-2.5 py-1 rounded-full shadow-sm whitespace-nowrap">
+                        TRADITIONAL
+                      </span>
+                      
+                      <div className="flex flex-row lg:flex-col items-center gap-1.5 lg:my-2">
+                        <span className="text-xs text-blue-500 font-bold animate-pulse hidden lg:inline">↓</span>
+                        <div className="text-[9px] font-black text-white bg-blue-600 border border-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.4)] px-3 py-1.5 rounded-2xl animate-pulse">
+                          SELLTRACK
+                        </div>
+                        <span className="text-xs text-blue-500 font-bold animate-pulse hidden lg:inline">↓</span>
+                      </div>
+
+                      <span className="text-[8px] font-black text-blue-600 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-full shadow-sm whitespace-nowrap">
+                        MODERN
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* RIGHT COLUMN: After SellTrack */}
+                  <motion.div 
+                    initial={{ opacity: 0, x: 10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.15 }}
+                    className="lg:col-span-5 bg-gradient-to-br from-blue-500/[0.04] via-blue-500/[0.01] to-white/90 rounded-[2.25rem] p-6 border border-blue-100/80 flex flex-col justify-between relative overflow-hidden backdrop-blur-sm shadow-[0_20px_40px_-15px_rgba(37,99,235,0.04)] group hover:border-blue-300 hover:shadow-blue-500/[0.05] transition-all duration-500"
+                  >
+                    {/* Glowing background highlights */}
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl -z-10" />
+
+                    <div>
+                      <div className="text-[9px] font-black text-blue-600 uppercase tracking-widest mb-6 border border-blue-100/60 bg-blue-50 px-3 py-1 rounded-full inline-block shadow-sm">
+                        AFTER SELLTRACK
+                      </div>
+                      
+                      <div className="space-y-4">
+                        {[
+                          { emoji: "📅", title: "Smart Booking System", desc: "Automated appointments" },
+                          { emoji: "📊", title: "Analytics Dashboard", desc: "Business insights" },
+                          { emoji: "⚡", title: "Process Automation", desc: "Reduced manual work" },
+                          { emoji: "🚀", title: "Premium Digital Presence", desc: "Modern customer experience" }
+                        ].map((item, idx) => (
+                          <div 
+                            key={idx}
+                            className="flex items-start space-x-3.5 p-3 rounded-2xl bg-white/90 border border-blue-50/50 shadow-sm hover:border-blue-200 hover:bg-blue-50/20 hover:scale-[1.02] transition-all duration-300 cursor-default group/item"
+                          >
+                            <span className="text-xl leading-none shrink-0 group-hover/item:scale-110 transition-transform">{item.emoji}</span>
+                            <div>
+                              <div className="text-xs font-bold text-gray-900 mb-0.5 leading-snug group-hover/item:text-blue-600 transition-colors">{item.title}</div>
+                              <div className="text-[10px] text-gray-500 leading-snug">{item.desc}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+
+                </div>
+
+
               </motion.div>
             </div>
           </section>

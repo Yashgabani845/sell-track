@@ -15,6 +15,11 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "SellTrack | Premium Digital Solutions for Local Businesses",
   description: "SellTrack provides high-end booking systems, inventory management, and premium websites for clinics, gyms, turfs, and more.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  }
 };
 
 import CustomCursor from "@/components/ui/CustomCursor";

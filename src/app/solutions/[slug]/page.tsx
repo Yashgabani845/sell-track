@@ -28,7 +28,7 @@ const solutionsData: Record<string, any> = {
       "Expense & Staff Management"
     ],
     demoLink: "/demos",
-    image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=1200&auto=format&fit=crop"
+    image: "/images/industries/turf.png"
   },
   "clinic-management": {
     title: "Clinic Management System",
@@ -42,7 +42,7 @@ const solutionsData: Record<string, any> = {
       "Billing & Lab Report Integration"
     ],
     demoLink: "/demos",
-    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1200&auto=format&fit=crop"
+    image: "/images/industries/clinic.png"
   },
   "gym-booking": {
     title: "Gym & Fitness Booking",
@@ -56,21 +56,7 @@ const solutionsData: Record<string, any> = {
       "Subscription Auto-renewals"
     ],
     demoLink: "/demos",
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop"
-  },
-  "jewellery-store": {
-    title: "Jewellery Online Store",
-    problem: "Selling high-value jewellery online requires trust, detailed visuals, and secure inventory management.",
-    solution: "A premium e-commerce platform with high-resolution viewers, certificate tracking, and secure shipping integration.",
-    features: [
-      "360-degree Product View",
-      "Hallmark Certificate Display",
-      "Live Gold/Silver Rate Integration",
-      "Insured Shipping Workflow",
-      "Custom Order Management"
-    ],
-    demoLink: "/demos",
-    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1200&auto=format&fit=crop"
+    image: "/images/industries/gym.png"
   },
   "ecommerce": {
     title: "E-commerce & Inventory",
@@ -84,7 +70,7 @@ const solutionsData: Record<string, any> = {
       "Loyalty Points System"
     ],
     demoLink: "/demos",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop"
+    image: "/images/industries/ecommerce.png"
   }
 };
 

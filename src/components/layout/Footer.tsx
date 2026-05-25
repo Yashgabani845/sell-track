@@ -95,32 +95,46 @@ export default function Footer({ showNewsletter = false }: { showNewsletter?: bo
           {/* Contact Info */}
           <div>
             <h3 className="text-[10px] text-gray-500 uppercase tracking-[0.4em] mb-10">Get in Touch</h3>
-            <ul className="space-y-10">
-              <li className="flex items-start space-x-6 group cursor-pointer">
-                <div className="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center text-blue-700 group-hover:bg-blue-600 group-hover:text-gray-900 transition-all duration-500 shadow-inner">
-                  <Phone size={24} />
-                </div>
-                <div>
-                  <div className="text-[10px] text-gray-500 uppercase font-black tracking-widest mb-1">WhatsApp Us</div>
-                  <div className="text-gray-900 font-black text-xl">+91 70469 96816</div>
-                </div>
+            <ul className="space-y-8">
+              <li>
+                <a 
+                  href="https://wa.me/917046996816" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center space-x-6 group cursor-pointer"
+                >
+                  <div className="w-14 h-14 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-400 group-hover:bg-blue-50 group-hover:text-blue-600 group-hover:border-blue-200 transition-all duration-300 shadow-inner shrink-0">
+                    <Phone size={24} />
+                  </div>
+                  <div>
+                    <div className="text-[10px] text-gray-500 uppercase font-black tracking-widest mb-1">WhatsApp Us</div>
+                    <div className="text-gray-900 font-black text-xl group-hover:text-blue-600 transition-colors duration-300">+91 70469 96816</div>
+                  </div>
+                </a>
               </li>
-              <li className="flex items-start space-x-6 group cursor-pointer">
-                <div className="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center text-blue-700 group-hover:bg-blue-600 group-hover:text-gray-900 transition-all duration-500 shadow-inner">
-                  <Mail size={24} />
-                </div>
-                <div>
-                  <div className="text-[10px] text-gray-500 uppercase font-black tracking-widest mb-1">Email Us</div>
-                  <div className="text-gray-900 font-black text-xl">gabaniyash846@gmail.com</div>
-                </div>
+              <li>
+                <a 
+                  href="mailto:gabaniyash846@gmail.com" 
+                  className="flex items-center space-x-6 group cursor-pointer"
+                >
+                  <div className="w-14 h-14 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-400 group-hover:bg-blue-50 group-hover:text-blue-600 group-hover:border-blue-200 transition-all duration-300 shadow-inner shrink-0">
+                    <Mail size={24} />
+                  </div>
+                  <div>
+                    <div className="text-[10px] text-gray-500 uppercase font-black tracking-widest mb-1">Email Us</div>
+                    <div className="text-gray-900 font-black text-xl group-hover:text-blue-600 transition-colors duration-300">gabaniyash846@gmail.com</div>
+                  </div>
+                </a>
               </li>
-              <li className="flex items-start space-x-6 group cursor-pointer">
-                <div className="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center text-gray-500 group-hover:bg-white group-hover:text-gray-900 transition-all duration-500 shadow-inner">
-                  <MapPin size={24} />
-                </div>
-                <div>
-                  <div className="text-[10px] text-gray-500 uppercase font-black tracking-widest mb-1">Office</div>
-                  <div className="text-gray-900 font-black text-xl">Surat, Gujarat, India</div>
+              <li>
+                <div className="flex items-center space-x-6 group">
+                  <div className="w-14 h-14 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-center text-gray-400 group-hover:bg-gray-100 group-hover:text-gray-700 group-hover:border-gray-200 transition-all duration-300 shadow-inner shrink-0">
+                    <MapPin size={24} />
+                  </div>
+                  <div>
+                    <div className="text-[10px] text-gray-500 uppercase font-black tracking-widest mb-1">Office</div>
+                    <div className="text-gray-900 font-black text-xl">Ahmedabad, Gujarat, India</div>
+                  </div>
                 </div>
               </li>
             </ul>

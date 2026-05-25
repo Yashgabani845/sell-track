@@ -65,7 +65,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Office</div>
-                      <div className="text-lg font-bold text-gray-900">Surat, Gujarat, India</div>
+                      <div className="text-lg font-bold text-gray-900">Ahmedabad, Gujarat, India</div>
                     </div>
                   </div>
                 </div>
@@ -138,7 +138,6 @@ export default function ContactPage() {
                             <option>Box Cricket Turf</option>
                             <option>Medical Clinic</option>
                             <option>Gym / Fitness</option>
-                            <option>Jewellery Shop</option>
                             <option>E-commerce Store</option>
                             <option>Other</option>
                           </select>

@@ -29,13 +29,6 @@ const demos = [
     image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800&auto=format&fit=crop",
     link: "#",
     type: "Booking App"
-  },
-  {
-    title: "Royal Jewellery",
-    category: "Retail",
-    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800&auto=format&fit=crop",
-    link: "#",
-    type: "E-commerce"
   }
 ];
 
